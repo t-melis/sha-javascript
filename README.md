@@ -1,3 +1,4 @@
-i# sha-javascript
+sha-javascript
 
 Repository for Social Hackers Academy Javascript exercises
+
