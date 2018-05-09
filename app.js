@@ -13,7 +13,7 @@ console.log("Hola, mundo!");
 // and after the apostroph the next caracters become unrecognizable by the
 // interpreter
 // console.log('I'm awesome!');
-// The solution is to use escape character " / " or use double quotes
+// The solution is to use escape character " \ " or use double quotes
 console.log('I\'m awesome');
 console.log("I'm awesome");
 
