@@ -100,4 +100,12 @@ arr.push(true);
 
 console.log(arr);
 
+// Logs I can't compare infinities
+if ((6/0) === (10/0)){
+	console.log("I can compare infinities");
+} else{
+	console.log("I can't compare infinities");
+}
 
+// Logs Infinity
+console.log(6/0);
