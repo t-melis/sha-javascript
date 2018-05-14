@@ -10,7 +10,7 @@ console.log(myStringLength);
 
 // Here we will use the replace function attached to the string object and a regular expression matching the commas in the sentence as the first argument of the function. The second argument with me the space string " "
 
-myString.replace(/,/g, " ");
+myString = myString.replace(/,/g , " ");
 
 // Log the string to see if you succeeded
 console.log(myString);
@@ -25,7 +25,7 @@ let favoriteAnimals = ["blowfish", "capricorn", "giraffe"];
 favoriteAnimals.push("turtle");
 
 // Log your new array
-console.log(favoriteAnimal);
+console.log(favoriteAnimals);
 
 // Now add Jim's favorite animal to the array, its 'meerkat', but make sure it will be placed after 'blowfish' and before 'capricorn'
 
@@ -48,15 +48,15 @@ console.log("The array has a length of: " + favoriteAnimals.length);
 // Because giraffe isnt last or first in the array we cannot use pop or shift functions
 // Here we can use 2 functions. delete and splice. Their difference is tha tdekete will delete the object property but will not reindex the array or update its length. This isnt something we want so we will use the splice method
 
-myfavoriteAnimals.splice(4, 1);
+favoriteAnimals.splice(4, 1);
 
 // Log your new array
-console.log(myfavoriteAnimals);
+console.log(favoriteAnimals);
 
 // Now if unlike Jim, you done like 'meerkat' and you want to delete it from the array, but you dont know the position or the index of the item in that array, how can you find it?
 // We can use the indexOf() method which returns the first index at thich a given element can be found in the array, or returns -1 if its not present
 
-var indexOfGiraffe = myfavoriteAnimals.indexOf("giraffe");
+var indexOfGiraffe = favoriteAnimals.indexOf("giraffe");
 console.log("The item you are looking for is at index: " + indexOfGiraffe);
 
 // Create a function that takes 2 arguments and returns the sum of these arguments
@@ -85,7 +85,8 @@ function printObj(object){
 }
 
 // Test the function
-console.log({car: "Opel", color: "red"});
+var car = {car: "Opel", color: "red"};
+printObj(car);
 
 // Create a function named vehicleType that receives a color, and a code, 1 for cat, 2 for motorbike and prints "a blue motorbike" for example when called as vehicleType("blue", 2)
 
@@ -109,25 +110,25 @@ console.log(3 === 3? "yes" : "no");
 
 // Create a function called vehicle, like before but takes another parameter called age, so that vehicle("blue", 1. 5) prints a blue used car
 
-function vehicle(color, age, code){
-	if(code === 1){
-		if(age > 1){
-			console.log("A " + color + "used car");
-		} else {
-			console.log("A " + color + " new car");
-		}
-	}
-	else if(code === 2){
-		if(age > 1) {
-			console.log("A " + color " used motorbike");
-		} else {
-			console.log("A " + color + " new motorbike");
-		}
-	}
-	else {
-		console.log("Wrong code");
-	}
-}
+// function vehicle(color, age, code){
+// 	if(code === 2){
+// 		if(age > 1){
+// 			console.log("A " + color + " used car");
+// 		} else {
+// 			console.log("A " + color + " new car");
+// 		}
+// 	}
+// 	else if(code === 1){
+// 		if(age > 1) {
+// 			console.log("A " + color + " used motorbike");
+// 		} else {
+// 			console.log("A " + color + " new motorbike");
+// 		}
+// 	}
+// 	else {
+// 		console.log("Wrong code");
+// 	}
+// }
 			
 // Make a list of vehicles, you can add "motorbike", "caravan", "bike" or more
 
@@ -140,7 +141,65 @@ console.log(list[2]);
 
 // Change the function vehicle to use the list of question 7/ So that vehicle("green", 3, 1) prints a green new bike
 
-vehicle("green", 3, 1);
+// vehicle("green", 3, 1);
+
+function vehicle(color, i, age, list){
+	console.log("A " + color + " " + ((age === 1)? "new" : "used") + " " + list[i-1]);
+}
+
+
+vehicle("green", 3, 1, list);
+
+var myStr = "";
+for(var i = 0; i < list.length; i++){
+	myStr += list[i] + "s,";
+}
+
+myStr = "Amazing Joe's Garage, we service "+ myStr.replace(/.$/,".");
+console.log(myStr);
+
+let teachers = [{name: "Kostas"}, {name: "Kosmas"}];
+
+teachers.forEach(teacher => {
+	teacher.teaches = "Javascript";
+})
+
+console.log(teachers);
+
+let o1 = {foo: 'bar'};
+let o2 = {foo: 'bar'};
+let o3 = o2;
+
+o2.bar = 'foo';
+console.log(o3);
+console.log(o1);
+console.log("It does not");
+
+
+let x = [1,2,3];
+let y = [1,2,3];
+let z = y;
+
+// Arrays are reference type meaning they 
+// get saved on the heap memory of the computer
+// So although they have the same values they 
+// have different place in memory
+// So comparing x and y will be false
+// z = y means that now z is a pointer to y so changing y
+// will also change z! so z is equal to y but not x
+console.log(x == y);
+console.log(x === y);
+console.log(z == x);
+console.log(z == y);
+
+// typeof returns a string so typeof typeof
+// will return a string
+let bar = 42;
+console.log(typeof typeof bar);
+
+
+
+
 
 
 
